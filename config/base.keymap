@@ -14,8 +14,8 @@
 #define NAV 2
 #define NUM 3
 #define SYS 4
-#define UC 5
-#define MOUSE 6
+#define MOUSE 5
+#define UC 6
 
 #include "combos.dtsi"  // requires layer aliases
 #include "mouse.dtsi"
@@ -246,7 +246,6 @@ ZMK_BEHAVIOR(win_sleep, macro,
 #define VOL_DOWN    &hmr LCTRL C_VOL_DN
 
 /* Keymap */
-
 ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
 
 
@@ -268,9 +267,9 @@ ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮    ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────────┬──────────╮
     &kp EQUAL     &kp N1         &kp N2        &kp N3        &kp N4         &kp N5       &tog 1               &mo 3        &kp N6       &kp N7         &kp N8        &kp N9        &kp N0        &kp MINUS
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-    &kp TAB       &kp Q          &kp W         &kp E         &kp R          &kp T        &none                &none        &kp Y        &kp U          &kp I         &kp O         &kp P          &kp BSLH
+    &kp TAB       &kp Q          &kp W         &kp E         &kp R          &kp T        &tog 2               &tog 3       &kp Y        &kp U          &kp I         &kp O         &kp P          &kp BSLH
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-    &kp ESC       &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHIFT F   &kp G        &none                &none        &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI SEMI   &kp SQT
+    &kp ESC       &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHIFT F   &kp G        &tog 4               &tog 5       &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI SEMI   &kp SQT
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╭─────────────┴────┴─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
     &smart_shft   &kp Z          &kp X         &kp C         &kp V          &kp B                                          &kp N        &kp M        &comma_morph   &dot_morph     &qexcl         &swapper
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────╭─────────────╯                                ╰────────────╮┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
