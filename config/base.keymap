@@ -190,6 +190,11 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
+ZMK_BEHAVIOR(slash_morph, mod_morph,
+    bindings = <&kp SLASH>, <&kp QUESTION>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 // tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(lt_spc, hold_tap,
     flavor = "balanced";
@@ -265,21 +270,21 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮    ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────────┬──────────╮
-    &kp EQUAL     &kp N1         &kp N2        &kp N3        &kp N4         &kp N5       &tog 1               &mo 3        &kp N6       &kp N7         &kp N8        &kp N9        &kp N0        &kp MINUS
+    &kp EQUAL     &kp N1         &kp N2        &kp N3        &kp N4         &kp N5       &tog 1               &mo 4        &kp N6       &kp N7         &kp N8        &kp N9        &kp N0         &kp MINUS
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-    &kp TAB       &kp Q          &kp W         &kp E         &kp R          &kp T        &tog 2               &tog 3       &kp Y        &kp U          &kp I         &kp O         &kp P          &kp BSLH
+    &kp TAB       &kp Q          &kp W         &kp E         &kp R          &kp T        &mo 3                &none        &kp Y        &kp U          &kp I         &kp O         &kp P          &kp BSLH
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-    &kp ESC       &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHIFT F   &kp G        &tog 4               &tog 5       &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI SEMI   &kp SQT
+    &kp ESC       &hml LGUI A    &hml LALT S   &hml LCTRL D  &hml LSHIFT F  &kp G        &mo 5                &none        &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI &qexcl &kp SQT
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╭─────────────┴────┴─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-    &smart_shft   &kp Z          &kp X         &kp C         &kp V          &kp B                                          &kp N        &kp M        &comma_morph   &dot_morph     &qexcl         &swapper
+    &smart_shft   &kp Z          &kp X         &kp C         &kp V          &kp B                                          &kp N        &kp M        &comma_morph   &dot_morph    &slash_morph    &swapper
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────╭─────────────╯                                ╰────────────╮┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-     &mo FN        &kp GRAVE      &kp CAPS      &kp LEFT      &kp RIGHT                                                    &kp UP       &kp DOWN       &kp LBKT      &kp RBKT      &kp RALT
+    &mo FN        &kp GRAVE      &kp CAPS      &kp LEFT      &kp RIGHT                                                     &kp UP       &kp DOWN       &kp LBKT      &kp RBKT      &kp RALT       &mo FN
 //╰─────────────┴─────────────┴─────────────┴────────────────────────────────────────────────────────────────────────────────────────┴─────────────┴─────────────┴─────────────┴────────────────┴──────────╯
-                                                                          &kp ESC       &kp MEH(J)        &kp MEH(K)     &kp ESC
+                                                                            &kp ESC      &kp MEH(J)         &kp MEH(K)     &kp ESC
 //                                                        ╭─────────────╯                               │                           ╰────────────╮
-                                                             &bs_del      &smart_shft   NAV_LEFT          &kp UP_ARROW   &kp ENTER      &kp SPACE
+                                                             &kp SPACE      &bs_del      &smart_shft        SMART_NUM      &kp ENTER    &kp SPACE
 //                                                        ╰───────────────────────────╮                 │               ╭────────────────────────╯
-                                                                                        NAV_RIGHT         &kp DOWN_ARROW
+                                                                                         &kp ESC            &kp TAB
 //                                                                                    ╰─────────────────┴───────────────╯
 )
 
