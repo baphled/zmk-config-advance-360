@@ -256,7 +256,7 @@ ZMK_BEHAVIOR(dot_dance, tap_dance,
 )
 ZMK_BEHAVIOR(qt_dance, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&mt DQT QMARK>, <&kp BSLH>;
+    bindings = <&mt DQT QMARK>, <&kp FSLH>;
 )
 
 // Windows sleep key
