@@ -11,6 +11,13 @@
 #include "../zmk-nodefree-config/international_chars/greek.dtsi"
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
 
+#define XXX &none
+#define ___ &trans
+
+/* Global settings */
+
+#define QUICK_TAP_MS 175
+
 #define DEF 0
 #define FN 1
 #define NAV 2
@@ -23,27 +30,7 @@
 #include "mouse.dtsi"
 #include "extra_keys.h"
 
-/ {
-    behaviors {
-        /omit-if-no-ref/ media_keys: behavior_media_keys {
-            compatible = "zmk,behavior-caps-word";
-            label = "MEDIA_KEYS";
-            #binding-cells = <0>;
-            mods = <MOD_LSFT>;
-            continue-list = <UNDERSCORE BACKSPACE DELETE>;
-            ignore-alphas;
-            ignore-numbers;
-            ignore-modifiers;
-        };
-    };
-};
-
-#define XXX &none
-#define ___ &trans
-
-/* Global settings */
-
-#define QUICK_TAP_MS 175
+#include "behaviours/fn.dtsi"
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.6s
@@ -140,32 +127,6 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
     layers = <NUM>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
-
-// tap smart-fn | double-tap: sticky fn-layer | hold: fn-layer
-#define SMART_FN &smart_fn FN 1
-ZMK_BEHAVIOR(smart_fn, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&fn_dance>;
-)
-
-ZMK_BEHAVIOR(fn_dance, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&media_keys>, <&sl FN>;
-)
-
-/*
- * typically, we want to use the FN layer for modifiers, but we also want to
- * use the FN layer for the FN keys. This behaviour allows us to use the FN
- * layer for modifiers, but not for the FN keys.
- *
- */
-&media_keys {  // num-word, requires PR #1451
-  layers = <FN>;
-  continue-list = <C_PREV C_NEXT C_VOL_UP C_VOL_UP C_VOL_DN RSHFT LALT>;
-};
-
 // smart-mouse, requires PR #1366
 ZMK_BEHAVIOR(smart_mouse, tri_state,
     bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
@@ -336,13 +297,13 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
 
 ZMK_LAYER(base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮    ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬────────────────┬──────────╮
-    &kp EQUAL     &kp N1         &kp N2        &kp N3        &kp N4         &kp N5       SMART_FN             &tog 2       &kp N6       &kp N7         &kp N8        &kp N9        &kp N0        &kp MINUS
+    &kp EQUAL     &kp N1         &kp N2        &kp N3        &kp N4         &kp N5       &tog 1               &tog 2       &kp N6       &kp N7         &kp N8        &kp N9        &kp N0        &kp MINUS
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
     &none         &kp Q          &kp W         &kp E         &kp R          &kp T        &mo 3                &none        &kp Y        &kp U          &kp I         &kp O         &kp P          &kp BSLH
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
     SMART_NUM     &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHIFT F   &kp G        &mo 5                &tog 6       &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI SEMI   &kp SQT
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╭─────────────┴────┴─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-    &none         &kp Z          &kp X         &kp C         &kp V          &kp B                                          &kp N        &kp M        &comma_dance   &dot_dance     &qt_dance      &swapper
+    SMART_FN      &kp Z          &kp X         &kp C         &kp V          &kp B                                          &kp N        &kp M        &comma_dance   &dot_dance     &qt_dance      &swapper
 //├─────────────├─────────────┼─────────────┼─────────────┼─────────────╭─────────────╯                                ╰────────────╮┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
     &mo FN        &kp GRAVE     &kp CAPS      &kp LEFT      &kp RIGHT                                                     &kp UP       &kp DOWN       &kp LBKT      &kp RBKT      &kp RALT
 //╰─────────────┴─────────────┴─────────────┴────────────────────────────────────────────────────────────────────────────────────────┴─────────────┴─────────────┴─────────────┴────────────────┴──────────╯
