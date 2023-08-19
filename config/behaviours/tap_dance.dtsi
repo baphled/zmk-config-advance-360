@@ -1,0 +1,18 @@
+// tap: copy | double-tap: cut
+ZMK_BEHAVIOR(copy_cut, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LC(INS)>, <&kp LC(X)>;
+)
+
+ZMK_BEHAVIOR(comma_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&mt SEMI COMMA>, <&kp BSLH>;
+)
+ZMK_BEHAVIOR(dot_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&mt COLON DOT>, <&kp EXCL>;
+)
+ZMK_BEHAVIOR(qt_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&mt DQT QMARK>, <&kp FSLH>;
+)

@@ -33,7 +33,9 @@ ZMK_BEHAVIOR(fn_dance, tap_dance,
  * layer for modifiers, but not for the FN keys.
  *
  */
-&media_keys {  // num-word, requires PR #1451
+&media_keys {  // media-key, requires PR #1451
   layers = <FN>;
   continue-list = <C_PREV C_NEXT C_VOL_UP C_VOL_UP C_VOL_DN RSHFT LALT>;
 };
+
+/* vim: set ft=c tw=174: */
