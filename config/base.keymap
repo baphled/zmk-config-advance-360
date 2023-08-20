@@ -138,8 +138,8 @@ ZMK_BEHAVIOR(forward, tri_state,
 #define VOL_UP      &hmr LCTRL C_VOL_UP
 #define VOL_DOWN    &hmr LCTRL C_VOL_DN
 
-#define DSK_PREV    &kp RSHFT               // previous desktop
-#define DSK_NEXT    &kp LALT                // next     desktop
+#define DSK_PREV    &hmr RSHFT LG(LC(LEFT))  // previous desktop
+#define DSK_NEXT    &hmr LALT LG(LC(RIGHT))  // next     desktop
 
 
 /* Keymap */
