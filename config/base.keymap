@@ -37,7 +37,6 @@
 #include "behaviours/smart_fn.dtsi"
 
 #include "mouse.dtsi"
-#include "combos.dtsi"  // requires layer aliases
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.6s
@@ -147,10 +146,7 @@ ZMK_BEHAVIOR(forward, tri_state,
 
 #define TMUX_CMD    &kp LC(A)                // tmux command mode
 
-#define LOCK_SCR    &kp LGUI(L)              // lock screen
-
-#define HYPER LA(LS(LC(LCMD)))
-#define PRNTSCR &kp C_AC_PRINT
+#include "combos.dtsi"  // requires layer aliases
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
@@ -176,6 +172,11 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
     chosen {
         zmk,matrix_transform = &urobs_transform;
     };
+
+    behaviors {
+      #include "macros.dtsi"
+    };
+
 
     keymap {
         compatible = "zmk,keymap";

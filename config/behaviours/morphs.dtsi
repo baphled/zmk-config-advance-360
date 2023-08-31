@@ -18,6 +18,16 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
     mods = <(MOD_LCTL|MOD_RCTL)>;
 )
 
+ZMK_BEHAVIOR(quote_morph, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&macro_quotes>, <&macro_dquotes>;
+)
+
+ZMK_BEHAVIOR(bracket_morph, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&macro_brackets>, <&macro_braces>;
+)
+
 // tap: qmark | shift + tap: excl
 ZMK_BEHAVIOR(qexcl, mod_morph,
     bindings = <&kp QMARK>, <&kp EXCL>;
