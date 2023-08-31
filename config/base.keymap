@@ -143,6 +143,14 @@ ZMK_BEHAVIOR(forward, tri_state,
 #define DSK_PREV    &hmr RSHFT LG(LC(LEFT))  // previous desktop
 #define DSK_NEXT    &hmr LALT LG(LC(RIGHT))  // next     desktop
 
+#define VIM_WIN     &kp LC(W)                // vim window  mode
+
+#define TMUX_CMD    &kp LC(A)                // tmux command mode
+
+#define LOCK_SCR    &kp LGUI(L)              // lock screen
+
+#define HYPER LA(LS(LC(LCMD)))
+#define PRNTSCR &kp C_AC_PRINT
 
 /* Keymap */
 ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
@@ -179,13 +187,13 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
             //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
                 &none         &kp Q          &kp W         &kp E         &kp R          &kp T        &none               &none         &kp Y        &kp U          &kp I         &kp O         &kp P          &kp BSLH
             //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-                SMART_NUM     &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHIFT F   &kp G        &none               &tog 6        &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI SEMI   &kp SQT
+                SMART_NUM     &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHIFT F   &kp G        &none             &tog WORKMAN     &kp H       &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L &hmr RGUI SEMI   &kp SQT
             //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╭─────────────┴────┴─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
                 &tog MOUSE    &kp Z          &kp X         &kp C         &kp V          &kp B                                          &kp N        &kp M        &kp COMMA      &kp DOT       &kp FSLH       &kp RSHFT
             //├─────────────├─────────────┼─────────────┼─────────────┼─────────────╭─────────────╯                                ╰────────────╮┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-                SMART_FN      &kp GRAVE     &kp CAPS      &kp LEFT      &kp RIGHT                                                                   &kp UP        &kp DOWN       &kp LBKT      &kp RBKT       SMART_FN
+                SMART_FN      &kp GRAVE     &kp CAPS      &kp LEFT      &kp RIGHT                                                                   &kp UP        &kp DOWN       &kp LBKT      &kp RBKT       &tog NAV
             //╰─────────────┴─────────────┴─────────────┴────────────────────────────────────────────────────────────────────────────────────────┴─────────────┴─────────────┴─────────────┴────────────────┴──────────╯
-                                                                                      &smart_shft   &kp LC(W)         &kp LC(A)       &smart_shft
+                                                                                      &smart_shft   VIM_WIN           TMUX_CMD        &smart_shft
             //                                                        ╭─────────────╯                               │                            ╰───────────╮
                                                                          &kp SPACE    &bs_del       &kp TAB           &kp TAB         &kp ENTER    &kp SPACE
             //                                                        ╰───────────────────────────╮                 │               ╭────────────────────────╯
@@ -311,13 +319,13 @@ ZMK_CONDITIONAL_LAYER(FN NUM, SYS)  // FN + NUM --> SYS
         //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
             &none         &kp Q         &kp D          &kp R        &kp W         &kp B         ___                ___            &kp J        &kp F         &kp U         &kp P         &kp SEMICOLON    &kp BSLH
         //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤    ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-            SMART_NUM     &hml LGUI A   &hml LALT S    &hml LCTRL H &hml LSHIFT T &kp G         ___                &tog 6         &kp Y       &hmr RSHIFT N  &hmr RCTRL E  &hmr RALT O   &hmr RGUI I      &kp SQT
+            SMART_NUM     &hml LGUI A   &hml LALT S    &hml LCTRL H &hml LSHIFT T &kp G         ___                &tog WORKMAN   &kp Y       &hmr RSHIFT N  &hmr RCTRL E  &hmr RALT O   &hmr RGUI I      &kp SQT
         //├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╭─────────────┴────┴─────────────├─────────────┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
             &tog MOUSE    &kp Z         &kp X          &kp M        &kp C         &kp V                                           &kp K        &kp L         &kp COMMA     &kp PERIOD    &kp SLASH        &kp RSHFT
         //├─────────────├─────────────┼─────────────┼─────────────┼─────────────╭─────────────╯                                ╰────────────╮┼─────────────┼─────────────┼─────────────┼────────────────┤──────────┤
-            SMART_FN      &kp GRAVE     &kp CAPS      &kp LEFT      &kp RIGHT                                                                   &kp UP        &kp DOWN       &kp LBKT      &kp RBKT       SMART_FN
+            SMART_FN      &kp GRAVE     &kp CAPS      &kp LEFT      &kp RIGHT                                                                   &kp UP        &kp DOWN       &kp LBKT      &kp RBKT       &tog NAV
         //╰─────────────┴─────────────┴─────────────┴────────────────────────────────────────────────────────────────────────────────────────┴─────────────┴─────────────┴─────────────┴────────────────┴──────────╯
-                                                                                 &smart_shft   &kp LC(W)         &kp LC(A)       &smart_shft
+                                                                                  &smart_shft   VIM_WIN           TMUX_CMD       &smart_shft
         //                                                        ╭─────────────╯                               │                            ╰───────────╮
                                                                     &kp SPACE    &bs_del       &kp TAB           &kp TAB         &kp ENTER    &kp SPACE
         //                                                        ╰───────────────────────────╮                 │               ╭────────────────────────╯
