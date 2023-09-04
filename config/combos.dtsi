@@ -22,11 +22,12 @@
 #define PRNT_SCRN  &kp PRINTSCREEN
 
 /* Hrrizontal combos - left hand */
-ZMK_COMBO(esc,   &kp ESC,               LT2 LT2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(esc,   &kp ESC,               LT2 LT3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(ret,   &kp RETURN,            LT2 LT1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(hyper, &kp MEH(LGUI),         LT1 LT0,     DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
 
-ZMK_COMBO(num,   SMART_NUM,             LT2 LT1,     DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
+ZMK_COMBO(num,   SMART_NUM,             LT1 LT3,     DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
+ZMK_COMBO(mosys, &mo SYS,               RT1 RT2 RT3, DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
 
 ZMK_COMBO(tab,   HRC_TAB,               LM3 LM2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(repeat,HRC_REPEAT,            LM2 LM1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
@@ -40,17 +41,15 @@ ZMK_COMBO(prscrn,PRNT_SCRN,             RT0 RT1,     DEF NAV NUM WORKMAN, COMBO_
 ZMK_COMBO(bspc,  &kp BSPC,              RT1 RT2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(del,   &kp DEL,               RT2 RT3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
-ZMK_COMBO(dqt,   &macro_dquotes,        RM0 RM1,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(lpar,  HRC_LPAR,              RM1 RM2,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(rpar,  HRC_RPAR,              RM2 RM3,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(lt,    &kp LT,                RM1 RM2,         NAV     WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(gt,    &kp GT,                RM2 RM3,         NAV     WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(sqt,   &macro_quotes,         RM3 RM4,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(dqt,   &macro_dquotes,        RM0 RM1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(lt,    &kp LT,                RM1 RM2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(gt,    &kp GT,                RM2 RM3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(sqt,   &macro_quotes,         RM3 RM4,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
-ZMK_COMBO(lbkt,  &kp LBKT,              RB1 RB2,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(rbkt,  &kp RBKT,              RB2 RB3,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(lbrc,  &kp LBRC,              RB1 RB2,         NAV     WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,              RB2 RB3,         NAV     WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(paren, &macro_parens,         RB0 RB1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+
+ZMK_COMBO(lbrc,  &macro_braces,         RB1 RB2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(rbrc,  &macro_brackets,       RB2 RB3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
 ZMK_COMBO(grk,   SMART_FN,              RT1 RT3,     DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
 ZMK_COMBO(cpgrk, &smart_mouse,          RT1 RT2 RT3, DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
