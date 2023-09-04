@@ -40,11 +40,12 @@ ZMK_COMBO(prscrn,PRNT_SCRN,             RT0 RT1,     DEF NAV NUM WORKMAN, COMBO_
 ZMK_COMBO(bspc,  &kp BSPC,              RT1 RT2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(del,   &kp DEL,               RT2 RT3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
+ZMK_COMBO(dqt,   &macro_dquotes,        RM0 RM1,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(lpar,  HRC_LPAR,              RM1 RM2,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(rpar,  HRC_RPAR,              RM2 RM3,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(lt,    &kp LT,                RM1 RM2,         NAV     WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(gt,    &kp GT,                RM2 RM3,         NAV     WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(sqt,   &quote_morph,          RM3 RM4,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(sqt,   &macro_quotes,         RM3 RM4,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
 
 ZMK_COMBO(lbkt,  &kp LBKT,              RB1 RB2,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(rbkt,  &kp RBKT,              RB2 RB3,     DEF     NUM WORKMAN, COMBO_TERM_FAST)
