@@ -48,8 +48,8 @@ ZMK_COMBO(sqt,   &macro_quotes,         RM3 RM4,     DEF NAV NUM WORKMAN, COMBO_
 
 ZMK_COMBO(paren, &macro_parens,         RB0 RB1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
-ZMK_COMBO(lbrc,  &macro_braces,         RB1 RB2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &macro_brackets,       RB2 RB3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(lbrc,  &macro_brackets,       RB1 RB2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(rbrc,  &macro_braces,         RB2 RB3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
 ZMK_COMBO(grk,   SMART_FN,              RT1 RT3,     DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
 ZMK_COMBO(cpgrk, &smart_mouse,          RT1 RT2 RT3, DEF NAV NUM WORKMAN, COMBO_TERM_SLOW)
