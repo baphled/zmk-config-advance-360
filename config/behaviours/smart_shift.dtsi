@@ -4,7 +4,7 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
 )
 &caps_word {  // mods deactivate caps-word, requires PR #1451
     /delete-property/ ignore-modifiers;
-    continue-list = <UNDERSCORE LSHFT>;
+    continue-list = <UNDERSCORE LSHFT COMMA>;
 };
 
 /* vim: set ft=c tw=174: */
