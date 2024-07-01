@@ -37,7 +37,7 @@ ZMK_COMBO(copy,  &kp LC(INS),           LB3 LB2,     DEF NAV NUM WORKMAN, COMBO_
 ZMK_COMBO(paste, &kp LS(INS),           LB2 LB1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(prscrn,PRNT_SCRN,             RT0 RT1,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
+ZMK_COMBO(prscrn,PRNT_SCRN,             LT0 RT0,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(bspc,  &kp BSPC,              RT1 RT2,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 ZMK_COMBO(del,   &kp DEL,               RT2 RT3,     DEF NAV NUM WORKMAN, COMBO_TERM_FAST)
 
